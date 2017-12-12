@@ -53,7 +53,7 @@
       <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://example.com/post/histograms/</guid>
-      <description>library(Lahman)library(sqldf)library(ggplot2)A histogram is a diagram consisting of rectangles whose area is proportional to the frequency of a variable and whose width is equal to the class interval. If we want, we can make a histogram of player weights for the Master table.query&amp;lt;-&amp;quot;SELECT weightFROM Master&amp;quot;result&amp;lt;-sqldf(query)ggplot()+geom_histogram(data=result,aes(x=weight),color=&amp;quot;blue&amp;quot;,fill=&amp;quot;black&amp;quot;,bins=50)+ggtitle(&amp;quot;Body Weight Distribution for Baseball Players&amp;quot;)## Warning: Removed 854 rows containing non-finite values (stat_bin).</description>
+      <description>library(Lahman)library(sqldf)library(ggplot2)A histogram is a diagram consisting of rectangles whose area is proportional to the frequency of a variable and whose width is equal to the class interval. If we want, we can make a histogram of player weights for the Master table.query&amp;lt;-&amp;quot;SELECT weightFROM Master&amp;quot;result&amp;lt;-sqldf(query)ggplot()+geom_histogram(data=result,aes(x=weight),color=&amp;quot;blue&amp;quot;,fill=&amp;quot;black&amp;quot;,bins=50)+ggtitle(&amp;quot;Body Weight Distribution for Baseball Players&amp;quot;)</description>
     </item>
     
     <item>
@@ -64,7 +64,7 @@
       <guid>http://example.com/post/scatter-plots/</guid>
       <description>library(ggplot2)Let’s generate some random points:
 x&amp;lt;-rnorm(100,5,2)y&amp;lt;-rnorm(100,2*x+1,2)Now lets make a data frame:
-df&amp;lt;-data.frame(x,y)df## x y## 1 6.4289882 13.9629646## 2 4.9000944 8.9119643## 3 5.3154000 14.6507148## 4 4.1776247 8.4196963## 5 6.0354762 13.5169885## 6 4.8022511 12.3898345## 7 4.7044248 9.4097616## 8 5.7850649 12.2255453## 9 3.1144690 8.6576551## 10 4.2302098 12.6660704## 11 2.6351701 2.7038803## 12 8.0823527 17.1393168## 13 6.1496305 15.</description>
+df&amp;lt;-data.frame(x,y)df## x y## 1 5.1089940 11.124920## 2 6.4524267 13.255904## 3 4.5778870 10.671022## 4 5.5786422 12.624943## 5 7.2663878 13.963270## 6 7.0609615 14.806919## 7 7.8375879 14.192994## 8 1.3516762 6.562539## 9 3.0958754 5.752326## 10 6.1418889 13.023048## 11 9.9885482 22.745704## 12 6.6663554 10.043185## 13 7.0385666 15.</description>
     </item>
     
   </channel>
