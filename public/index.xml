@@ -66,6 +66,15 @@
     </item>
     
     <item>
+      <title>Time Series</title>
+      <link>http://example.com/post/time-series/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/post/time-series/</guid>
+      <description>library(Lahman)library(sqldf)library(ggplot2)A time series allows you to visualize data over time. It is similar to a time series.# Extraction----------------------------query&amp;lt;-&amp;quot;SELECT yearID,HRFROM BattingWHERE playerID=&amp;#39;ruthba01&amp;#39;&amp;quot;result&amp;lt;-sqldf(query)# Visualization-------------------------ggplot()+#geom_point(data=result,aes(x=yearID,y=HR))+geom_line(data=result,aes(x=yearID,y=HR))+ggtitle(&amp;quot;Ruth&amp;#39;s Homerun Totals Throughout the Years&amp;quot;)+xlab(&amp;quot;Year&amp;quot;)+ylab(&amp;quot;Homeruns&amp;quot;)</description>
+    </item>
+    
+    <item>
       <title>Scatter Plots</title>
       <link>http://example.com/post/scatter-plots/</link>
       <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
@@ -73,7 +82,7 @@
       <guid>http://example.com/post/scatter-plots/</guid>
       <description>library(ggplot2)Let’s generate some random points:
 x&amp;lt;-rnorm(100,5,2)y&amp;lt;-rnorm(100,2*x+1,2)Now lets make a data frame:
-df&amp;lt;-data.frame(x,y)df## x y## 1 6.7883988 16.3877942## 2 4.8493155 12.8704619## 3 2.0621010 6.3343349## 4 5.7761743 12.9010844## 5 5.0656947 13.1660723## 6 4.2073421 9.4477171## 7 4.8510761 13.4294245## 8 4.6378375 14.5120841## 9 3.5505389 8.4056178## 10 7.5372497 16.9860796## 11 3.0858759 6.3724005## 12 0.6635683 1.3361093## 13 6.5434733 13.</description>
+df&amp;lt;-data.frame(x,y)df## x y## 1 2.2706684 4.0795977## 2 4.6836427 10.2784157## 3 2.2036465 8.5582833## 4 8.6330362 16.9354385## 5 1.3893371 5.4141639## 6 4.1577993 10.0333565## 7 4.1103825 9.0071640## 8 2.5875756 6.5353934## 9 6.6279684 16.9478947## 10 2.6902838 5.4174785## 11 3.9832900 9.9401166## 12 6.6614711 14.4421014## 13 2.2090786 5.</description>
     </item>
     
   </channel>

@@ -29,6 +29,11 @@
   </url>
   
   <url>
+    <loc>http://example.com/post/time-series/</loc>
+    <lastmod>2017-12-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.com/post/scatter-plots/</loc>
     <lastmod>2017-09-21T00:00:00+00:00</lastmod>
   </url>

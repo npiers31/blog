@@ -1,0 +1,34 @@
+---
+title: Time Series
+author: Noah
+date: '2017-12-11'
+slug: time-series
+categories: []
+tags: []
+---
+
+
+
+<pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+<div id="a-time-series-allows-you-to-visualize-data-over-time.-it-is-similar-to-a-time-series." class="section level4">
+<h4>A time series allows you to visualize data over time. It is similar to a time series.</h4>
+<pre class="r"><code># Extraction----------------------------
+
+query&lt;-&quot;SELECT yearID,HR
+FROM Batting
+WHERE playerID=&#39;ruthba01&#39;&quot;
+
+result&lt;-sqldf(query)
+
+# Visualization-------------------------
+
+ggplot()+
+  #geom_point(data=result,aes(x=yearID,y=HR))+
+  geom_line(data=result,aes(x=yearID,y=HR))+
+  ggtitle(&quot;Ruth&#39;s Homerun Totals Throughout the Years&quot;)+
+  xlab(&quot;Year&quot;)+
+  ylab(&quot;Homeruns&quot;)</code></pre>
+<p><img src="/post/2017-12-11-time-series_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
