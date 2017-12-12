@@ -128,25 +128,20 @@
 
     <br> <div class="text-justify"><pre class="r"><code>library(Lahman)
 library(sqldf)
-library(ggplot2)
-
-# Extraction----------------------------
-
-query&lt;-&quot;SELECT yearID,HR
-FROM Batting
-WHERE playerID=&#39;ruthba01&#39;&quot;
+library(ggplot2)</code></pre>
+<div id="this-is-where-the-text-will-go." class="section level1">
+<h1>This is where the text will go.</h1>
+<pre class="r"><code>query&lt;-&quot;SELECT weight
+FROM Master&quot;
 
 result&lt;-sqldf(query)
 
-# Visualization-------------------------
-
 ggplot()+
-  #geom_point(data=result,aes(x=yearID,y=HR))+
-  geom_line(data=result,aes(x=yearID,y=HR))+
-  ggtitle(&quot;Ruth&#39;s Homerun Totals Throughout the Years&quot;)+
-  xlab(&quot;Year&quot;)+
-  ylab(&quot;Homeruns&quot;)</code></pre>
-<p><img src="/post/2017-12-11-histograms_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+  geom_histogram(data=result,aes(x=weight),color=&quot;blue&quot;,fill=&quot;black&quot;,bins=50)+
+  ggtitle(&quot;Body Weight Distribution for Baseball Players&quot;)</code></pre>
+<pre><code>## Warning: Removed 854 rows containing non-finite values (stat_bin).</code></pre>
+<p><img src="/post/2017-12-11-histograms_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
 </div>
 
     

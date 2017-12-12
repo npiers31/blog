@@ -10,22 +10,18 @@ tags: []
 library(Lahman)
 library(sqldf)
 library(ggplot2)
+```
 
-# Extraction----------------------------
+#This is where the text will go.
 
-query<-"SELECT yearID,HR
-FROM Batting
-WHERE playerID='ruthba01'"
+```{r}
+query<-"SELECT weight
+FROM Master"
 
 result<-sqldf(query)
 
-# Visualization-------------------------
-
 ggplot()+
-  #geom_point(data=result,aes(x=yearID,y=HR))+
-  geom_line(data=result,aes(x=yearID,y=HR))+
-  ggtitle("Ruth's Homerun Totals Throughout the Years")+
-  xlab("Year")+
-  ylab("Homeruns")
+  geom_histogram(data=result,aes(x=weight),color="blue",fill="black",bins=50)+
+  ggtitle("Body Weight Distribution for Baseball Players")
 ```
 
