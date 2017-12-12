@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Scatter Plots</title>
+        <title>Bar Plots</title>
         <style>
 
     html body {
@@ -69,7 +69,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Scatter Plots</a>
+                    <a class="navbar-brand visible-xs" href="#">Bar Plots</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -119,126 +119,35 @@
     
     
 
-    <h4><a href="/post/scatter-plots/">Scatter Plots</a></h4>
-    <h5>September 21, 2017</h5>
-     <kbd class="item-tag">scatter plot</kbd> 
+    <h4><a href="/post/bar-plots/">Bar Plots</a></h4>
+    <h5>December 11, 2017</h5>
+    
 
 </div>
 
 
-    <br> <div class="text-justify"><pre class="r"><code>library(ggplot2)</code></pre>
-<p>Let’s generate some random points:</p>
-<pre class="r"><code>x&lt;-rnorm(100,5,2)
-y&lt;-rnorm(100,2*x+1,2)</code></pre>
-<p>Now lets make a data frame:</p>
-<pre class="r"><code>df&lt;-data.frame(x,y)
+    <br> <div class="text-justify"><pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+<div id="bar-plots-are-representations-of-data-by-using-rectangular-bars.-here-is-a-bar-plot-of-the-mlb-1980-team-homerun-distribution.-in-this-distribution-we-flipped-the-x-and-y-axes-with-the-coord_flip-command." class="section level4">
+<h4>Bar plots are representations of data by using rectangular bars. Here is a bar plot of the MLB 1980 Team Homerun Distribution. In this distribution, we flipped the x and y axes with the coord_flip() command.</h4>
+<pre class="r"><code>query&lt;-&quot;SELECT name,HR
+FROM Teams
+WHERE yearID=1980
+ORDER BY HR&quot;
 
-df</code></pre>
-<pre><code>##              x         y
-## 1    5.9926293  9.425611
-## 2    4.6578607 11.509147
-## 3    3.5197421  7.235854
-## 4    4.7957026 14.080796
-## 5    9.2051271 21.776224
-## 6   10.5626760 19.070662
-## 7    4.1588825  9.006563
-## 8    5.7278332 13.778639
-## 9    6.9370208 16.482780
-## 10   2.3910508  9.973877
-## 11   3.1928079  7.827959
-## 12   4.1522983 10.984928
-## 13   5.0610368 11.436694
-## 14   6.0918438 16.356689
-## 15   3.8894444  8.509009
-## 16   4.6805893 13.955300
-## 17   6.6949325 12.178472
-## 18   6.7685473 10.903255
-## 19   8.2470387 19.426281
-## 20   3.3216922  4.782111
-## 21   5.7399853 14.868164
-## 22   6.8421299 13.139498
-## 23   7.2360433 16.561403
-## 24   7.1151837 17.707383
-## 25   4.6129071 10.195067
-## 26   3.6865305  7.296321
-## 27   2.9998066  6.299225
-## 28   4.2310536  8.993376
-## 29   5.5866646 13.506275
-## 30   2.9845185  6.717570
-## 31   7.0224863 15.002069
-## 32   7.5399483 15.503987
-## 33   7.4339684 14.999476
-## 34   6.6398858 17.547577
-## 35   2.2557558  7.315169
-## 36   3.6183529  8.335318
-## 37   5.6147221 12.244045
-## 38   3.6946985  8.342324
-## 39   5.5254858 14.406315
-## 40   9.6150490 18.070478
-## 41   5.6152078 14.650535
-## 42   4.6528750  6.917003
-## 43  10.7067711 23.943775
-## 44   1.1501624  2.990813
-## 45   5.6954082 12.391146
-## 46   3.8739532  7.574210
-## 47   4.2396874  8.230427
-## 48   2.2365673  5.333073
-## 49   5.5723571 15.017386
-## 50   4.9735861 11.852892
-## 51   4.9528998  5.046931
-## 52   4.9199881 10.870439
-## 53   3.3725596 11.752570
-## 54   6.7137434 11.774363
-## 55   5.6652471 13.926743
-## 56   6.0014395 13.724316
-## 57   5.0598243 12.456813
-## 58   6.3870816  9.708839
-## 59   0.2747344 -1.355276
-## 60   7.4903145 17.116541
-## 61   2.4631715  6.176286
-## 62   4.2811076 10.982143
-## 63   7.5858097 17.373547
-## 64   4.0011774 10.580063
-## 65   7.2742192 16.165238
-## 66   1.1577536  4.800377
-## 67   4.2628089  8.645213
-## 68   5.6972461 10.843099
-## 69   3.8160812 10.565336
-## 70   6.9899183 14.906375
-## 71   3.9625479  6.031575
-## 72   3.5713948  8.524385
-## 73   1.0439483  4.564794
-## 74   2.5850631  5.481701
-## 75   6.4835079 11.580906
-## 76   5.2543552 14.292389
-## 77   2.8786509  6.218884
-## 78   6.4502611 16.016497
-## 79   6.8476698 15.362872
-## 80   5.0786805 10.586021
-## 81   7.4110832 15.897382
-## 82   4.8691869 13.412848
-## 83   4.8555554 10.026371
-## 84   5.7166988 11.999587
-## 85   6.6788334 16.790109
-## 86   3.1308358  9.942693
-## 87   8.9189453 18.262909
-## 88   2.5077100  6.422311
-## 89   3.9342434  5.738092
-## 90   1.4055784  1.961089
-## 91   4.1205645  5.816662
-## 92   5.5373190 11.835543
-## 93   5.2590198  9.104960
-## 94   5.7715585 12.967384
-## 95   8.2226259 13.289289
-## 96   4.8461614 11.245726
-## 97   4.8435050 11.339508
-## 98   5.2556272 11.767217
-## 99   5.5306411 13.954826
-## 100  4.8569416  9.229543</code></pre>
-<p>Finally, the plot:</p>
-<pre class="r"><code>ggplot()+
-geom_point(data=df, aes(x,y))</code></pre>
-<p><img src="/post/2017-09-21-scatter-plots_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+result&lt;-sqldf(query)
+
+result$name&lt;-factor(result$name,levels=result$name)
+
+ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat=&#39;identity&#39;,color=&quot;blue&quot;,fill=&quot;white&quot;)+
+  coord_flip()+
+  ylab(&quot;Homeruns&quot;)+
+  xlab(&quot;Teams&quot;)+
+  ggtitle(&quot;1980 Team Homerun Distribution&quot;)</code></pre>
+<p><img src="/post/2017-12-11-bar-plots_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
 </div>
 
     
