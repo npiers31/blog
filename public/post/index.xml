@@ -2,51 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Noah&#39;s blog</title>
-    <link>http://example.com/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on Noah&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Bar Plots</title>
-      <link>http://example.com/post/bar-plots/</link>
-      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.com/post/bar-plots/</guid>
-      <description>library(Lahman)library(sqldf)library(ggplot2)Bar plots are representations of data by using rectangular bars. Here is a bar plot of the MLB 1980 Team Homerun Distribution. In this distribution, we flipped the x and y axes with the coord_flip() command.query&amp;lt;-&amp;quot;SELECT name,HRFROM TeamsWHERE yearID=1980ORDER BY HR&amp;quot;result&amp;lt;-sqldf(query)result$name&amp;lt;-factor(result$name,levels=result$name)ggplot()+geom_bar(data=result,aes(x=name,y=HR),stat=&amp;#39;identity&amp;#39;,color=&amp;quot;blue&amp;quot;,fill=&amp;quot;white&amp;quot;)+coord_flip()+ylab(&amp;quot;Homeruns&amp;quot;)+xlab(&amp;quot;Teams&amp;quot;)+ggtitle(&amp;quot;1980 Team Homerun Distribution&amp;quot;)</description>
-    </item>
     
     <item>
-      <title>Histograms</title>
-      <link>http://example.com/post/histograms/</link>
-      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      <title>Yemen Stability Analysis</title>
+      <link>/post/yemen-stability-analysis/</link>
+      <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/post/histograms/</guid>
-      <description>library(Lahman)library(sqldf)library(ggplot2)A histogram is a diagram consisting of rectangles whose area is proportional to the frequency of a variable and whose width is equal to the class interval. If we want, we can make a histogram of player weights for the Master table.query&amp;lt;-&amp;quot;SELECT weightFROM Master&amp;quot;result&amp;lt;-sqldf(query)ggplot()+geom_histogram(data=result,aes(x=weight),color=&amp;quot;blue&amp;quot;,fill=&amp;quot;black&amp;quot;,bins=50)+ggtitle(&amp;quot;Body Weight Distribution for Baseball Players&amp;quot;)</description>
-    </item>
-    
-    <item>
-      <title>Time Series</title>
-      <link>http://example.com/post/time-series/</link>
-      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.com/post/time-series/</guid>
-      <description>library(Lahman)library(sqldf)library(ggplot2)A time series allows you to visualize data over time. It is similar to a time series.# Extraction----------------------------query&amp;lt;-&amp;quot;SELECT yearID,HRFROM BattingWHERE playerID=&amp;#39;ruthba01&amp;#39;&amp;quot;result&amp;lt;-sqldf(query)# Visualization-------------------------ggplot()+#geom_point(data=result,aes(x=yearID,y=HR))+geom_line(data=result,aes(x=yearID,y=HR))+ggtitle(&amp;quot;Ruth&amp;#39;s Homerun Totals Throughout the Years&amp;quot;)+xlab(&amp;quot;Year&amp;quot;)+ylab(&amp;quot;Homeruns&amp;quot;)</description>
-    </item>
-    
-    <item>
-      <title>Scatter Plots</title>
-      <link>http://example.com/post/scatter-plots/</link>
-      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.com/post/scatter-plots/</guid>
-      <description>library(ggplot2)Let’s generate some random points:
-x&amp;lt;-rnorm(100,5,2)y&amp;lt;-rnorm(100,2*x+1,2)Now lets make a data frame:
-df&amp;lt;-data.frame(x,y)df## x y## 1 2.2706684 4.0795977## 2 4.6836427 10.2784157## 3 2.2036465 8.5582833## 4 8.6330362 16.9354385## 5 1.3893371 5.4141639## 6 4.1577993 10.0333565## 7 4.1103825 9.0071640## 8 2.5875756 6.5353934## 9 6.6279684 16.9478947## 10 2.6902838 5.4174785## 11 3.9832900 9.9401166## 12 6.6614711 14.4421014## 13 2.2090786 5.</description>
+      <guid>/post/yemen-stability-analysis/</guid>
+      <description></description>
     </item>
     
   </channel>
